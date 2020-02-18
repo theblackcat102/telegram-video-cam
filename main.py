@@ -10,7 +10,8 @@ from settings import (
         telegram_api_key, count_down_frame,
         video_width,
         trigger_area,
-        include_contour
+        include_contour,
+        font_size
 )
 from telegram.bot import Bot
 bot = None
@@ -90,7 +91,7 @@ try:
             if frame_count_down > 0:
 
                 cv2.putText(frame, datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
-                    (10, frame.shape[0] - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 1)
+                    (10, frame.shape[0] - 10), cv2.FONT_HERSHEY_SIMPLEX, font_size, (0, 0, 255), 1)
                 frame_buffers.append(frame)
                 frame_buffers = frame_buffers[-max_frame_buffer:]
                 frame_count_down = frame_count_down - 1

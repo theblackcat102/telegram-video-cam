@@ -14,6 +14,8 @@ user_id = os.getenv("USER_ID", "")
 # maximum video number
 max_frame_buffer = 5000 
 
+font_size = float(os.getenv("FONT_SIZE", "0.5"))
+
 # movement change patch size to trigger recording unit: pix^2
 trigger_area = int(os.getenv("TRIGGER_AREA", "100"))
 
